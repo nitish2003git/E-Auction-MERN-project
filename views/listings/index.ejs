@@ -1,0 +1,108 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="hero-section">
+        <div class="hero-left">
+            <h1 style="color: #6E7FEB; font-weight: 900;">Bid it & Grab it</h1>
+            <p>“Unlock the Excitement: Your Gateway <br>to Online Auctions”</p>
+            <a href="#all-products"><button>Explore</button></a>
+        </div>
+        <img src="/images/—Pngtree—bidding and bidding charity auction_6701939.png" alt="auction image">
+    </div>
+    <hr>
+   <section class="fact-section">
+        <div class="content">
+            <h2>Do You Know!</h2>
+            <div>
+                <p><u>Leonardo Da Vinci’s Salvator Mundi - $450.3 million <br>(Approx Rs 3350 Crore) -</u>
+                    Leonardo da Vinci's “Salvator Mundi” <br>was bought for the astronomical sum of $450 million by the <br>Crown Prince of Saudi Arabia, Mohammed bin Salman in <br>New York in 2017, smashing the world record for the most <br>expensive work ever sold.</p>
+                <img src="images/highest-bid.jpg" alt="image">
+            </div>
+            <div>
+                <img src="images/220px-Peep-at-Christies-Gillray.jpeg" alt="first auction image">
+                <p>The first mention of <u>"auction", according to the Oxford</u> <br>English Dictionary, appeared in 1595. In some parts of England <br>during the 17th and 18th centuries, auctions by candle began <br>to be used for the sale of goods and leaseholds. In a candle <br>auction, the end of the auction was signaled by the expiration <br>of a candle flame.</p>
+            </div>
+        </div>
+   </section>
+
+
+    
+  
+    <section class="all-products" id="all-products">
+        <h2 class="products-heading"><img src="/images/transparent-law-icon-auction-icon-banking-icon-5fd1420f558e49.3815937816075494553504.png" alt="logo" width="35" height="35" alt="logo">Latest Auctions...</h2>
+        <% if(currUser && currUser._id == '6620dee15d1f7a336b04823a'){ %>    
+        <form action="/listings/new" method="GET" style="display: inline-block;">
+            <button>Create new listing</button>
+        </form>&nbsp;&nbsp;
+        <form action="/listings/admin/checkAllOrders" method="GET" style="display: inline-block;" >
+            <button>Check all orders</button>
+        </form>
+        <br> <br>
+        <% } %>
+
+
+        <form action="/listings" method="get" class="category">
+        <select class="form-select" name="CATEGORY" required style="width: 15%; display: inline-block;">
+            <option selected>All items</option>
+            <% for(let i=0; i < mainCategory.type.length; i++){ %>
+                <option value="<%=mainCategory.type[i]%>"><%= mainCategory.type[i] %></option>
+            <% } %>    
+          </select>
+          <button type="submit" style="background-color: rgb(50, 5, 212); color: white; border-radius: 5px;"><i class="fa-sharp fa-regular fa-circle-check"></i></button>
+        </form>
+    
+    <br>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let listing of allListings){ %>
+        <a href="/listings/<%= listing._id %>" class="listing-link">
+        <div class="card col" >
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+            <div class="card-img-overlay">
+                <p id="index-countdown-<%= listing._id %>" class="index-countdown"></p>
+            </div>
+            <div class="card-body">
+            <p class="card-text">
+              <b><%= listing.title %></b> <br>
+                <% if(listing.currentBid != null){%>
+                  Current Bid: &#8377;<%= listing.currentBid.toLocaleString("en-IN") %>
+                    <% } else {%>
+                  No one bid at this product <br>
+                  <% } %> &nbsp;&nbsp;
+                  Starting bid: &#8377;<%= listing.bidAmount.toLocaleString("en-IN") %>
+            </p>
+            </div>
+        </div>
+        </a>
+        <% } %>
+    </div>
+</section>
+
+<script>
+    let allListings = JSON.parse('<%- JSON.stringify(allListings) %>');
+    function displayTime(listing){
+    let dest = new Date(listing.expirationTime).getTime();
+
+    let x = setInterval(function(){             
+    let now = new Date().getTime();
+    let diff = dest-now;
+    
+    let days = Math.floor(diff / (1000*60*60*24));
+    let hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    let minutes = Math.floor((diff %(1000*60*60))/(1000*60));
+    let seconds = Math.floor((diff%(1000*60))/1000);
+
+    document.getElementById("index-countdown-"+listing._id).innerHTML = days +"d, " + hours + "hrs:" + minutes + "m:" + seconds + "s";
+
+    if(diff < 0){
+        clearInterval(x);
+        document.getElementById("index-countdown-"+listing._id).innerHTML = "00" +"d, " + "00"+ "hrs:" + "00" + "m:" + "00" + "s";
+    }
+
+    },1000);
+}
+allListings.forEach(listing => {
+    displayTime(listing);
+});
+</script>
+
+  
+</body>

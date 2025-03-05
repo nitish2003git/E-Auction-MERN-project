@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg sticky-top mh-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings">
+        <img src="/images/transparent-law-icon-auction-icon-banking-icon-5fd1420f558e49.3815937816075494553504.png" alt="logo" width="35" height="35">
+        BidZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link"  href="/listings">Home</a>
+          <a class="nav-link" href="/listings#all-products">Product</a>
+          <a class="nav-link" href="/listings/aboutUs">About</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <% if(!currUser){ %>
+          <a class="nav-link"  href="/login">Login</a>
+          <a class="nav-link" href="/signup">SignUp</a>
+          <% } %>
+          <% if(currUser){ %>
+          <a class="nav-link" href="/<%= currUser._id %>/yourOrders"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+          <a class="nav-link" href="/logout">LogOut</a>
+          <% } %>  
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+ 
+  

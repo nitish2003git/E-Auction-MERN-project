@@ -1,0 +1,132 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:India Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T000000
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=Ria Vij:mailto:ria.vij@wipro.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=khushigupt
+ a51.kh@gmail.com:mailto:khushigupta51.kh@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Luvsarpal@
+ gmail.com:mailto:Luvsarpal@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=manishavin
+ ayak06@gmail.com:mailto:manishavinayak06@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=minkugupta
+ 904@gmail.com:mailto:minkugupta904@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=mahajanmeh
+ ak176@gmail.com:mailto:mahajanmehak176@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=nk9135987@
+ gmail.com:mailto:nk9135987@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=neeteeshja
+ itly@gmail.com:mailto:neeteeshjaitly@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=n3071859@g
+ mail.com:mailto:n3071859@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=nitishsain
+ i604@gmail.com:mailto:nitishsaini604@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=pahulpreet
+ singh03@gmail.com:mailto:pahulpreetsingh03@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=palakbedi8
+ 28@gmail.com:mailto:palakbedi828@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Parasprinj
+ a1103@gmail.com:mailto:Parasprinja1103@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=piyushpand
+ ey046@gmail.com:mailto:piyushpandey046@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=raghavmaha
+ jan4333@gmail.com:mailto:raghavmahajan4333@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=ramanrandh
+ awa670@gmail.com:mailto:ramanrandhawa670@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=ravisharma
+ 23515@gmail.com:mailto:ravisharma23515@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=myselfrohi
+ t67@gmail.com:mailto:myselfrohit67@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=rohitkumar
+ r2212@gmail.com:mailto:rohitkumarr2212@gmail.com
+DESCRIPTION;LANGUAGE=en-US:Hi All\,\n\n\n\nPlease join your Group Discussio
+ n Round through the below link\, 5 mins prior to 3pm.\n\n\n\nRegards\,\n\n
+ Ria Vij\n\n\n\n___________________________________________________________
+ _____________________\nMicrosoft Teams Need help?<https://aka.ms/JoinTeams
+ Meeting?omkt=en-US>\nJoin the meeting now<https://teams.microsoft.com/l/me
+ etup-join/19%3ameeting_ZDc2NTAwY2EtOTA5MS00N2FiLWE2ZWUtYzUyNjA0MGE2ZDFh%40
+ thread.v2/0?context=%7b%22Tid%22%3a%22258ac4e4-146a-411e-9dc8-79a9e12fd6da
+ %22%2c%22Oid%22%3a%224245cb9a-741f-4468-aa0e-ca22a36d3fb3%22%7d>\nMeeting 
+ ID: 432 248 476 010\nPasscode: ihro9m\n________________________________\nJ
+ oin on a video conferencing device\nTenant key: wiproconcca@m.webex.com\nV
+ ideo ID: 138 662 332 9\nMore info<https://www.webex.com/msteams?confid=138
+ 6623329&tenantkey=wiproconcca&domain=m.webex.com>\nFor organizers: Meeting
+  options<https://teams.microsoft.com/meetingOptions/?organizerId=4245cb9a-
+ 741f-4468-aa0e-ca22a36d3fb3&tenantId=258ac4e4-146a-411e-9dc8-79a9e12fd6da&
+ threadId=19_meeting_ZDc2NTAwY2EtOTA5MS00N2FiLWE2ZWUtYzUyNjA0MGE2ZDFh@threa
+ d.v2&messageId=0&language=en-US> | Reset dial-in PIN<https://dialin.teams.
+ microsoft.com/usp/pstnconferencing>\n_____________________________________
+ ___________________________________________\n'The information contained in
+  this electronic message and any attachments to this message are intended 
+ for the exclusive use of the addressee(s) and may contain proprietary\, co
+ nfidential or privileged information. If you are not the intended recipien
+ t\, you should not disseminate\, distribute or copy this e-mail. Please no
+ tify the sender immediately and destroy all copies of this message and any
+  attachments. WARNING: Computer viruses can be transmitted via email. The 
+ recipient should check this email and any attachments for the presence of 
+ viruses. The company accepts no liability for any damage caused by any vir
+ us transmitted by this email. www.wipro.com'\n
+UID:040000008200E00074C5B7101A82E00800000000849CDB91B58CDA01000000000000000
+ 010000000C7D33733C7AB0542940ECF79912958BE
+SUMMARY;LANGUAGE=en-US:Group Interaction: Slot C: 3:00 pm: Wipro: 12th Apri
+ l' 24
+DTSTART;TZID=India Standard Time:20240412T150000
+DTEND;TZID=India Standard Time:20240412T160000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20240412T084403Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION;LANGUAGE=en-US:Microsoft Teams Meeting
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:2122604932
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-ONLINEMEETINGINFORMATION:{"OnlineMeetingChannelId":null\,"Onlin
+ eMeetingProvider":3}
+X-MICROSOFT-SKYPETEAMSMEETINGURL:https://teams.microsoft.com/l/meetup-join/
+ 19%3ameeting_ZDc2NTAwY2EtOTA5MS00N2FiLWE2ZWUtYzUyNjA0MGE2ZDFh%40thread.v2/
+ 0?context=%7b%22Tid%22%3a%22258ac4e4-146a-411e-9dc8-79a9e12fd6da%22%2c%22O
+ id%22%3a%224245cb9a-741f-4468-aa0e-ca22a36d3fb3%22%7d
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:https://api.scheduler.teams.microsof
+ t.com/teams/258ac4e4-146a-411e-9dc8-79a9e12fd6da/4245cb9a-741f-4468-aa0e-c
+ a22a36d3fb3/19_meeting_ZDc2NTAwY2EtOTA5MS00N2FiLWE2ZWUtYzUyNjA0MGE2ZDFh@th
+ read.v2/0
+X-MICROSOFT-SKYPETEAMSPROPERTIES:{"cid":"19:meeting_ZDc2NTAwY2EtOTA5MS00N2F
+ iLWE2ZWUtYzUyNjA0MGE2ZDFh@thread.v2"\,"rid":0\,"mid":0\,"uid":null\,"priva
+ te":true\,"type":0\,"ct":null\,"btid":null}
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:TRUE
+X-MICROSOFT-LOCATIONDISPLAYNAME:Microsoft Teams Meeting
+X-MICROSOFT-LOCATIONSOURCE:None
+X-MICROSOFT-LOCATIONS:[{"DisplayName":"Microsoft Teams Meeting"\,"LocationA
+ nnotation":""\,"LocationUri":""\,"LocationStreet":""\,"LocationCity":""\,"
+ LocationState":""\,"LocationCountry":""\,"LocationPostalCode":""\,"Locatio
+ nFullAddress":""}]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

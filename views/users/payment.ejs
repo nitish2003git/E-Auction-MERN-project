@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Form</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#34495e;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 777px;
+    margin: 50px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+  }
+  .form-section {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .form-section:last-child {
+    border-bottom: none;
+  }
+  .form-section h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  .form-section input[type="text"],
+  .form-section input[type="email"],
+  .form-section input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  .row {
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  .col-half {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+  }
+  .col-half:last-child {
+    margin-right: 0;
+  }
+  .form-section input[type="submit"] {
+    width: calc(100% - 40px);
+    padding: 15px;
+    margin: 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .form-section input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  .payment-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .payment-section .accepted-cards {
+    display: flex;
+    align-items: center;
+  }
+  .accepted-cards img {
+    height: 20px;
+    margin-right: 10px;
+  }
+  .credit-card-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .credit-card-info > div {
+    width: 48%;
+  }
+  .credit-card-info input {
+    width: calc(100% - 22px);
+  }
+  .expiry-date {
+    display: flex;
+  }
+  .expiry-date > div {
+    width: 70%;
+    margin-right: 5%;
+  }
+  .expiry-date input[type="number"] {
+    width: 50px;
+  }
+  .expiry-date input[type="month"] {
+    width: calc(100% - 22px);
+	height: 30px;
+  }
+  .submit{
+	font-size: 20px;
+	padding: 5px;
+	margin: 10px;
+	background-color: #6288ad;
+	color: #fff;
+  }
+  .none{
+    display: none;
+  }
+  .error{
+    color: red;
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+	<form action="/listings/<%= listing._id %>/orders" method="POST" onsubmit="return formValidator()">
+  <div class="form-section">
+    <h2>BILLING ADDRESS</h2>
+    <label for="full-name">Full name</label>
+    <input type="text" id="full-name" name="full_name" placeholder="Enter name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" placeholder="Enter address" required>
+
+    <div class="row">
+      <div class="col-half">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter City" required>
+      </div>
+      <div class="col-half">
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="Enter State" required>
+      </div>
+    </div>
+    
+    <label for="zip">Zip code</label>
+    <input type="number" id="zip" name="zip" placeholder="Zip code" required>
+  </div>
+
+  <div class="form-section payment-section">
+    <div>
+      <h2>PAYMENT</h2>
+      <label>Credit card number</label>
+      <input type="number" name="card_number" placeholder="Enter card number" required>
+
+      <div class="credit-card-info">
+        <div class="expiry-date">
+          <div>
+            <label>Expiry Date</label>
+            <input type="month" name="expiry_date" required>
+          </div>
+          <div>
+            <label>CVV</label>
+            <input type="number" name="cvv" min="100" max="999" required>
+          </div>
+        </div>
+      </div>
+
+      <label for="order[amount]">Enter bid amount</label>
+<input type="number" name="order[amount]" class="form-control" id="orderamount" style="width: 17rem; display: inline-block;" required placeholder="bid should be > <% if(listing.currentBid==0){ %><%= listing.bidAmount %><% }else{ %><%=listing.currentBid%><% } %>">
+<p id="p1" class="error none"></p>
+    </div>
+    
+    <div class="accepted-cards">
+      <img src="/cardimage/card1.png" alt="Visa">
+      <img src="/cardimage/card2.png" alt="MasterCard">
+    </div>
+  </div>
+  <input type="submit" class="submit" value="Proceed to Checkout">
+  </form>
+</div>
+<script>
+  let listing = JSON.parse('<%- JSON.stringify(listing) %>');
+  function formValidator(){
+            let para=document.getElementById("p1");
+            let input = document.getElementById("orderamount");
+            console.log(input.value);
+
+            if(input.value=="")
+            {
+                para.innerText="* Kindly enter the sufficient amount *";
+                para.classList.remove("none");
+                flag=0;
+            }
+            else if(input.value==0)
+            {
+                para.innerText="* Kindly enter the sufficient amount *";
+                para.classList.remove("none");
+                flag=0;
+            }
+            else if(input.value<=0)
+            {
+                para.innerText="* Bid Amount can not be negative *";
+                para.classList.remove("none");
+                flag=0;
+            }
+            else if(listing.currentBid==0){
+              if(input.value<=listing.bidAmount){
+                para.innerText="* Bid Amount must be greater than starting Bid*";
+                para.classList.remove("none");
+                flag=0;
+              }
+            }
+            else if(input.value<=listing.currentBid)
+            {
+                para.innerText="* Bid Amount must be greater than previous Bid*";
+                para.classList.remove("none");
+                flag=0;
+            }
+            else{
+                flag=1;
+                para.classList.add("none");
+            }
+
+            if (flag==0){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+</script>
+</body>
+</html>

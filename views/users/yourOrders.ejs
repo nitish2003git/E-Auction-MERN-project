@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <section class="all-products" id="all-products">
+        <h2 class="products-heading"><img src="/images/transparent-law-icon-auction-icon-banking-icon-5fd1420f558e49.3815937816075494553504.png" alt="logo" width="35" height="35" alt="logo">Your Orders...</h2>
+        <hr>
+        <% if(user.allorders.length != 0 ){ %>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let order of user.allorders){ %>
+        <a href="/listings/<%= order.orderon._id %>" class="listing-link">
+        <div class="card col" >
+            <img src="<%= order.orderon.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+            <div class="card-body">
+            <p class="card-text">
+              <b><%= order.orderon.title %></b> <br>
+              You bid on this for <%= order.createdAt.toString().split(" ").slice(1,4).join("-") %> at
+              <%= order.createdAt.toString().split(" ")[4] %> <br>
+              Your bid was &#8377;<%= order.amount.toLocaleString("en-IN") %>
+               
+            </p>
+            </div>
+        </div>
+        </a>
+        <% } %>
+    </div>
+    <% }else{ %>
+        <h3><b>You did not bid on any product yet!</b></h3> <br><br><br><br><br><br>
+    <% } %>
+</section>
+</body>

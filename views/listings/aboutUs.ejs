@@ -1,0 +1,216 @@
+<% layout("/layouts/boilerplate") %>
+ 
+ <style>
+        /* *{
+            font-family: "Kanit", sans-serif; 
+ 
+        } */
+        
+        #head{
+            text-align: center;
+            background-color: #6E7FEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5rem;
+            color: aliceblue;
+            margin-bottom: 30px;
+        }
+
+        #Main{
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0px 20px;
+            text-align: justify;
+        }
+
+        #img{
+            height: 60px;
+            margin-left: 10px;
+        }
+
+        #img2{
+            margin-left: 60px;
+            width: 30%;
+            height: 40%;
+        }
+
+        .container{
+            display: flex;
+            margin: 100px 10px 120px 0px;
+        }
+        .txtArea{
+            margin-left: 120px;
+        }
+        #cardImg{
+            height: 100px;
+        }
+
+        .para{
+            font-size: 15px;
+            margin-top: 10px;
+            text-align: justify;
+        }
+       
+        #main{
+            margin: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .num img{
+            height: 70px;
+            margin-top:50px ;
+        }
+        .num{
+            font-size: larger;
+        }
+        #c0{
+            border-bottom:  4px solid aqua;
+        }
+        #techMain{
+            margin-top: 30px;
+            margin-bottom: 100px;
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .tech{
+            width: 450px;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.09);
+            border-radius: 10px;
+        }
+        #tech1{
+            text-align: center;            
+        }
+        hr{
+            margin-bottom: 50px;
+        }
+
+        /* Contact US PAge Styling */
+
+        #heading{
+            text-align: center;
+            color: #6E7FEB; 
+            font-size: 40px;
+        }
+        #contWrapper{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 40px;
+            height: 50vh;
+            gap: 200px;
+        }
+        .contactForm h3{ 
+            margin-bottom: 40px;
+        }
+        .contactInfo h3{
+            margin-bottom: 40px;
+        }
+
+        .contactForm{
+            height: 200px;
+        }
+        .contactInfo{
+            height: 200px;
+        }
+
+        .formElm input{
+            border-radius: 5px ;
+            width: 400px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+        }
+        .formElm textarea{
+            border-radius: 5px ;
+            width: 400px;
+            border: 2px solid black;
+            padding-top: 20px;
+            padding-left: 10px;
+
+        }
+        .formElm :focus{
+            border: 3px solid rgb(60, 0, 255);
+        }
+        #btn{
+            padding: 10px;
+            border-radius: 50px;
+            background: linear-gradient(270deg,skyblue,white);
+        }
+    </style>
+
+<body>
+
+    <div id="head">
+    <h1>About Us</h1>
+    <img id="img" src="\images\transparent-law-icon-auction-icon-banking-icon-5fd1420f558e49.3815937816075494553504.png" alt="logo" >
+    </div>
+
+    <p id="Main">Welcome to our E-Auction Website <a href="/listings">BidZone</a> . BidZone is a kind of Auction website in which auction is performed in online mode and all the goods and services are bought and sold through a competitive bidding process. The main objective of the project is to develop an online auction platform that facilitates the buying and selling of various products through a transparent and efficient bidding process. The platform aims to provide a user-friendly interface for users, ensuring a secure and fair environment for conducting Electronic Auctions.</p>
+    
+    <div id="main">
+        <div id="c0"><h1>How It Works</h1></div>
+        <div>
+            <div class="num" id="c1"><img src="\images\number-one.png" alt="img">Register</div>
+            <div class="num" id="c2"><img src="\images\number-2.png" alt="img">Choose Your Desired Product </div>
+            <div class="num" id="c3"><img src="\images\number-3.png" alt="img">Bid It</div>
+            <div class="num" id="c4"><img src="\images\number-four.png" alt="img">Win & Grab It</div>
+        </div> 
+    </div>
+
+
+    <div class="container">
+        <img id="img2" src="\images\auctionimg.jpeg" alt="">
+        <div class="txtArea">
+            <!-- <h2>E-Auction :- </h2> -->
+            <p class="para"><b>E-Auction</b> stands for Electronic Auction, which replaces the traditional Auction system in which the process of buying and selling goods or services is often time-consuming, geographically limited, and prone to inefficiencies.  </p>
+            <!-- <h2>Aim :- </h2> -->
+            <p class="para"> The proposed E-Auction System is an innovative online platform designed to overcome the limitations of traditional auctions. It leverages digital technology to provide a more accessible, efficient, and transparent environment for buying and selling goods or services.</p>
+            <h3>Key Features :-</h3>
+            <p class="para"><b>Online Platform, User-Friendly Interface, Timeliness, Scalable, Secure User Authentication</b></p>
+        </div>
+    </div>
+
+    <h3 id="tech1">Technologies <img src="\images\technology-png-image.jpg" alt="img" height="60px">used in this Website are as follows :-</h3>
+    <div id="techMain">
+        <div class="tech"><img src="\images\html-logo.png" height="70px"><br>HTML stands for Hyper Text Markup Language. It is a standard markup langugae which is used to create structure of the webpages. </div>
+        <div class="tech"><img src="\images\logo-css-3.png" height="70px"><br>CSS stands for Cascading Style Sheets. It is a style sheet language used to describe the presentation and formatting of a document written in HTML</div>
+        <div class="tech"><img src="\images\JSlogo.png" height="70px"><br>JavaScript is a scripting or programming language that allows you to implement complex features and functionalities on web pages.</div>
+        <div class="tech"><img src="\images\bootstrap-png.png" height="70px"><br>Bootstrap is a popular CSS framework that helps you create mobile-friendly and responsive websites with ease.It provides a collection of tools, components, and styles that simplify the web development process.</div>
+        <div class="tech"><img src="\images\node-js-logo-png.png" height="70px"><br>Node js is an open-source and cross-platform JavaScript runtime environment. It runs on Chrome’s V8 JavaScript engine for executing JavaScript code outside of a browser.</div>
+        <div class="tech"><img src="\images\express-js.webp" height="70px"><br>Express.js is a fast, flexible and minimalist web framework for Node.js. It’s effectively a tool that simplifies building web applications and APIs using JavaScript on the server side. </div>
+        <div class="tech"><img src="\images\EJS.png" height="70px"><br>Embedded JavaScript (EJS) is a template engine for JavaScript that is used for web development which allows users to generate dynamic HTML markup using JavaScript. It has fast compilation, simple syntax, easy debugging, and browser support.</div>
+        <div class="tech"><img src="\images\MongoDB_logo.png" height="70px"><br>MongoDB is a popular NoSql database management system. It stores data in flexible BSON like documents making it easy to work with highly scalable and a wide range of applications</div>
+    </div>
+    <hr>
+
+
+    <section id="ContactUs">
+
+        <h2 id="heading"> Contact Us</h2>
+        <div id="contWrapper">
+            <form action="https://api.web3forms.com/submit" method="POST">
+            <div class="contactForm">
+                <h3>Get In Touch, Ask Your Query</h3>
+                    <input type="hidden" name="access_key" value="1938200b-3f18-416e-8b51-3841f6d2e51c">
+                    <div class="formElm"><input class="cont-inp" type="text" placeholder="name" required></div>
+                    <div class="formElm"><input class="cont-inp" type="email" placeholder="abc@gmail.com" required></div>
+                    <div class="formElm"><textarea class="cont-inp" name="message" id="txt" placeholder="message" cols="20" rows="2" required></textarea></div>
+                    <input id="btn" type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div class="contactInfo">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-phone"></i>+91 8437627688</p>
+                <p><i class="fas fa-envelope"></i>nitishsaini604@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> DAV College, Amritsar</p>
+            </div>
+        </div>
+    </section>
+
+</body>

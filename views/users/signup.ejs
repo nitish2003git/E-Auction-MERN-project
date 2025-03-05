@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    body{
+        background-image: url("/images/182428240217.jpg");
+    background-size: cover;
+    }
+</style>
+<section class="signup-form signupbg">
+    <h1>SignUp on BidZone</h1>
+    <form action="/signup" method="POST" onsubmit="return signupValidator()">
+        <div class="mb-3">
+            <label for="fName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="fName" id="fName"  required>
+        </div>
+        <div class="mb-3">
+            <label for="lName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="lName" id="lName" required>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="username"  required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="abc@gmail.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="conPassword" class="form-label">Confirm Password</label>
+            <input type="Password" class="form-control" name="conPassword" id="conPassword" required>
+        </div>
+        <button>SignUp</button>
+    </form>
+</section>
+<script>
+    function signupValidator() {
+        let pass=document.getElementById("password");
+        let conPassword = document.getElementById("conPassword");
+
+        if (pass.value!= conPassword.value) {
+            alert("Passwords do not match");
+            return false;
+        }
+        return true;
+    }
+</script>

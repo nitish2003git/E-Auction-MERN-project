@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate") %>
+<div class="error-container">
+   <p><%= err.statusCode %>, <%= err.message %></p>
+   <img src="/images/error images/default-500.jpg" alt="error image" id="error-image">
+</div>
+<script>
+   let err = JSON.parse('<%- JSON.stringify(err) %>');
+   let errorImage = document.getElementById('error-image');
+
+    switch (err.statusCode) {
+      case 400:
+        errorImage.src = '/images/error images/error-400.png';
+        break;
+      case 404:
+        errorImage.src = '/images/error images/error-404.jpg';
+        break;
+      default:
+        errorImage.src = '/images/error images/default-500.jpg';
+}
+</script>

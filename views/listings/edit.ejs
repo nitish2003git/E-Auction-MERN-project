@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+
+   <section class="edit-form">
+        <h3>Edit your Listing</h3>
+        <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="listing[title]" id="title" value="<%= listing.title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="listing[description]" class="form-control" id="description"required><%= listing.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" name="listing[category]" id="title" value="<%= listing.category %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload image</label>
+                <input type="file" class="form-control" name="listing[image]" id="image" >
+              </div>
+            <div class="mb-3">
+                <label for="bidAmount" class="form-label">Enter starting Bid amount</label>
+                <input type="number" class="form-control" name="listing[bidAmount]" id="bidAmount" value="<%= listing.bidAmount %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="currentBid" class="form-label">Enter the current biding amount</label>
+                <input type="number" class="form-control" name="listing[currentBid]" id="currentBid" value="<%= listing.currentBid %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="expirationTime" class="form-label">Enter auction's expiration time</label>
+                <input type="datetime-local" class="form-control" name="listing[expirationTime]" id="expirationTime" value="<%= listing.expirationTime %>" required>
+            </div>
+            <button>Edit</button>
+        </form>
+    </section>

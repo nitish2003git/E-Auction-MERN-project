@@ -1,0 +1,104 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <br>
+    <h2 style="text-align: center;">Product Details:</h2><br>
+    <div class="main-container">
+        <div class="product-conatiner">
+            <img src="<%= listing.image.url %>" alt="product image">
+            <p id="countdown"></p>
+        </div>
+        <div class="description-container">
+            <h3><b><u><%= listing.title %></u></b></h3>
+            <p><%= listing.description %></p>
+            <p>
+                <b>Starting bid amount:</b> &nbsp;&#8377;<%= listing.bidAmount.toLocaleString("en-IN") %> <br>
+                <b>Current Bid: </b>&nbsp; <% if(listing.currentBid != null){%>
+                    &#8377;<%= listing.currentBid.toLocaleString("en-IN") %>
+                    <% }else{ %> 
+                        0
+                        <% } %><br>
+                <b>Expiry time:&nbsp;</b> <%= listing.expirationTime %>
+            </p>
+            <br>
+            <form action="/listings/<%= listing._id %>/orders/payment" method="GET">
+                <button type="submit" id="submit" class="btn btn-outline-dark">Bid</button>
+            </form>
+            <br>
+            <% if(currUser && currUser._id == '6620dee15d1f7a336b04823a'){ %>
+            <form action="/listings/<%= listing._id %>/edit" method="GET" style="display: inline-block;">
+                <button class="btn btn-outline-success">edit</button>
+            </form> &nbsp;&nbsp;
+            <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST" style="display: inline-block;">
+                <button class="btn btn-outline-danger">Delete</button>
+            </form>
+            <% } %>
+        </div>
+    </div>
+    <div class="winner" id="winner" style="text-align: center; display: none;" >
+        <hr>
+        <% if(person1!=null){ %>
+            &#129351;<h4>This item sold to <i>@<%= person1.orderby.username %></i></h4>
+            <p><b>Bid Amount:</b> &#8377;<%= person1.amount.toLocaleString("en-IN") %> <br>
+                Placed a bid for <%= person1.createdAt.toString().split(" ").slice(1,4).join("-") %> at
+                <%= person1.createdAt.toString().split(" ")[4] %>
+             </p>
+            <% } %>
+    </div>
+    <hr>
+    <h4 style="padding-left: 100px;">Bidding Status</h4>
+    <div class="bidding-status">
+        <div class="first">
+            <% if(person1!=null){ %>
+            &#129351;<h5><i>@<%= person1.orderby.username %></i></h5>
+            <p><b>Bid Amount:</b> &#8377;<%= person1.amount.toLocaleString("en-IN") %> <br>
+                Placed a bid for <%= person1.createdAt.toString().split(" ").slice(1,4).join("-") %> at
+                <%= person1.createdAt.toString().split(" ")[4] %>
+             </p>
+            <% } %>
+        </div>
+        <div class="second">
+            <% if(person2!=null){ %>
+            &#129352;<h5><i>@<%= person2.orderby.username %></i></h5>
+            <p><b>Bid Amount:</b> &#8377;<%= person2.amount.toLocaleString("en-IN") %> <br>
+                Placed a bid for <%= person2.createdAt.toString().split(" ").slice(1,4).join("-") %> at
+                <%= person2.createdAt.toString().split(" ")[4] %>
+             </p>
+            <% } %>
+        </div>
+        <div class="third">
+            <% if(person3!=null){ %>
+            &#129353;<h5><i>@<%= person3.orderby.username %></i></h5>
+            <p><b>Bid Amount:</b> &#8377;<%= person3.amount.toLocaleString("en-IN") %> <br>
+               Placed a bid for <%= person3.createdAt.toString().split(" ").slice(1,4).join("-") %> at
+               <%= person3.createdAt.toString().split(" ")[4] %>
+            </p>
+            <% } %>
+        </div>
+    </div>
+   
+    <script>
+        let listing = JSON.parse('<%- JSON.stringify(listing) %>');
+        let dest = new Date(listing.expirationTime).getTime();
+
+        let x = setInterval(function(){             
+        let now = new Date().getTime();
+        let diff = dest-now;
+        
+        let days = Math.floor(diff / (1000*60*60*24));
+        let hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        let minutes = Math.floor((diff %(1000*60*60))/(1000*60));
+        let seconds = Math.floor((diff%(1000*60))/1000);
+
+        document.getElementById("countdown").innerHTML = days +"d, " + hours + "hrs:" + minutes + "m:" + seconds + "s";
+
+        if(diff < 0){
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "00" +"d, " + "00"+ "hrs:" + "00" + "m:" + "00" + "s";
+            let winner = document.getElementById("winner");
+                winner.style.display = "block";
+                document.getElementById("submit").disabled = true;
+        }
+
+        },1000);
+    </script>
+</body>

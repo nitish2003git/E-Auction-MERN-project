@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+
+   <section class="new-form">
+    <h3>Create new listing</h3>
+    <form action="/listings" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="listing[title]" id="title" placeholder="Enter title" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" name="listing[description]" id="description" placeholder="Enter description" required>
+          </div>
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" name="listing[category]" id="category" placeholder="Enter category" required>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Upload image</label>
+            <input type="file" class="form-control" name="listing[image]" id="image" >
+          </div>
+          <div class="mb-3 ">
+            <label for="bidAmount" class="form-label">Enter starting Bid amount</label>
+            <input type="number" class="form-control" name="listing[bidAmount]" id="bidAmount" placeholder="e.g. 12,000" required>
+          </div>
+
+          <div class="mb-3 ">
+            <label for="expirationTime" class="form-label">Enter auction's expiration time</label>
+            <input type="datetime-local" class="form-control" name="listing[expirationTime]" id="expirationTime" required>
+          </div>
+        
+    
+        <button>Add</button>
+    </form>
+</section> 
